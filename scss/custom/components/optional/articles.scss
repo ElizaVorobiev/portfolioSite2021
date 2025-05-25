@@ -37,7 +37,7 @@ article{
   ol{
     > li{
       &:not(:last-child){
-        margin-bottom: $spacer*2;
+        margin-bottom: $spacer*.5;
       }
     }
   }
