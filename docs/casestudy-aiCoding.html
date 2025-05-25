@@ -326,7 +326,7 @@
                 <div class="col-md-4">
                   <figure>
                     <!-- Option Four image goes here -->
-                    <img src="assets/img/portfolio/aiCodingOption4.png" alt="Option Four Sketch" class="img-fluid">
+                    <img src="assets/img/portfolio/aiCodingInitial4.png" alt="Option Four Sketch" class="img-fluid">
                     <figcaption>Option Four Sketch</figcaption>
                   </figure>
                 </div>
@@ -345,8 +345,53 @@
                   </ul>
                 </div>
               </div>
-
+              <p>I shared these potential solutions with our users and advisors. Here's their key feedback:</p>
+              <ul>
+                <li>Insurance companies focus primarily on the final EM code, making provider input of MDM levels redundant.</li>
+                <li>Since providers often struggle to determine MDM levels, requiring them to select levels creates unnecessary complexity.</li>
+                <li>Clinic owners emphasized that providers must personally input the final EM code to maintain legal compliance.</li>
+                <li>Providers responded positively to the AI assistant, provided they could review its reasoning and make adjustments.</li>
+                <li>There was significant enthusiasm for expanding AI capabilities to include features like missed diagnosis detection.</li>
+              </ul>
+              <p>
+                Based on this feedback, I focused on refining the AI-powered education and the ability to review and adjust the final EM code.
+              </p>
+              <h2 class="mb-4">
+                Final Design
+              </h2>
+              <h3>Key Decision 1: Which AI Model to Use</h3>
+              <p>
+                We experimented with different models like gpt-4, o1, claude, and preplexity by running de-identified charts along with a prompt with all the EM coding rules and seeing if the output matched as expected.
+              </p>
+              <p>
+                In the end we went with gpt-4 since it had the most consistent results and we were already using Chat-GPT in other areas of the application. We also decided to remove
+              </p>
               
+              <h3>Key Decision 2: Remove other options</h3>
+              <p>
+                Initially we wanted to still provide options to providers on how they can code their visit. We included an option to manually select the MDM and the ability to code using Time instead of medical decision making. However after speaking with our customers and advisors we had unanimous feedback that they would rather just have the one option with the AI assisted coding.
+              </p>
+              
+              <figure>
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/0vhZENDXdd3lx0C8Y5cyLN/Portfolio-Screens?page-id=8%3A0&node-id=904-133485&viewport=-31141%2C13922%2C0.82&scaling=contain&content-scaling=fixed&starting-point-node-id=904%3A133584&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+              </figure>
+              <h2 class="mb-4">Results</h2>
+              <p>
+                We allowed customers to toggle on and off the AI assisted coding, 90% of our customers chose to use the AI Assisted coding solution. However, 10% preferred to code manually because they did not trust the AI results.
+              </p>
+              <p>
+                We also spoke to billers to try to measure if we reduced back and forth with providers. The response differed by the billing team. 30% of billers said that the AI tended to upcode visits while the other 70% thought that it was accurate on average.
+              </p>
+              <p>
+                Overall users really liked the simpleness of the feature but wanted to have see not only the generated medical decision making but also suggestions on how to improve the chart.
+              </p>
+
+              <h2 class="mb-4">Next Steps</h2>
+              <ol>
+                <li>Continue to experiment with newer models and different prompts to ensure we get the most accurate results</li>
+                <li>Add a feedback loop in the system so we can measure performance accurately</li>
+                <li>Add more AI suggestions like missing procedures or related diagnosis</li>
+              </ol>
             </article>
           </div>
         </div>
