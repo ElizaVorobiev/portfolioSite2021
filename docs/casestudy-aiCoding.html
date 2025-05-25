@@ -151,7 +151,7 @@
                 2. Workflow Analysis with Providers
               </h3>
               <p>
-                I spoke to providers using our EMR as well as clinical advisors and reviewed annotated charts to understand current pain points.
+                I knew providers would be the primary users of the EM coding assistant so I spoke to providers using our EMR as well as clinical advisors and reviewed annotated charts to understand current pain points.
               </p>
               <figure>
                 <img src="assets/img/portfolio/aiCodingUserFlow.png" alt="User flow diagram of the current EM coding experience, highlighting that provider has many tasks to do while they are completing patient charts" class="rounded">
@@ -167,12 +167,23 @@
                 <li>There was a lack of real-time feedback or suggestions, making accurate coding a time-consuming, error-prone task</li>
                 <li>Providers were open to automation, but only if they retained final control and had visibility into how the code was generated</li>
               </ul>
-
+              <p>
+                While uncovering these painpoints I noticed a difference in the needs of the providers. Some providers were more time-sensitive and wanted to get through the charting process as quickly as possible while others were more detail-oriented and wanted to ensure they were coding accurately. Based on these findings I created two personas for the primary user, the provider.
+              </p>
+              <figure>
+                <img src="assets/img/portfolio/aiCodingPersona1.png" alt="Provider Persona One: Dr.Sarah - Speed is Everything " class="rounded">
+                <figcaption>Provider Persona One: Dr.Sarah - Speed is Everything</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/img/portfolio/aiCodingPersona2.png" alt="Provider Persona Two: Dr.Julia - Meticulus and Detailed " class="rounded">
+                <figcaption>Provider Persona Two: Dr.Julia - Meticulus and Detailed</figcaption>
+              </figure>
 
               <h3 class="mb-4">
                 3. Interviews with Owners and Admins
               </h3>
               <p>
+                EM coding is integral for urgent care clinics so its important to note that there are 2 tertiary users also impacted by this project; the clinic owners and the clinic's billing team.
                 I interviewed clinic owners and admin staff to understand their pain points:
               </p>
               <ul>
@@ -181,6 +192,22 @@
                 <li>Lack of knowledge from some providers on how coding works, making it difficult to explain why certain charts need to be up coded or down coded</li>
                 <li>Concerned about potential revenue loss from chronic under coding by providers who don't know the MDM guidelines</li>
               </ul>
+              <p>
+                Based on these findings I created personas for the clinic owner and billing team.
+              </p>
+
+              <div class="col-sm-6">
+              <figure class="mb-1">
+                <img src="assets/img/portfolio/aiCodingPersona3.png" alt="Clinic Owner Persona" class="rounded">
+                <figcaption>Clinic Owner Persona: Rachel - Revenue is Everything </figcaption>
+              </figure>
+              </div>
+              <div class="col-sm-6">
+              <figure class="mb-1">
+                <img src="assets/img/portfolio/aiCodingPersona4.png" alt="Billing Team Persona" class="rounded">
+                <figcaption>Billing Team Persona: John - Accuracy is Everything</figcaption>
+              </figure>
+              </div>
 
               <h3 class="mb-4">
                 4. Audit of Current Experience
@@ -203,68 +230,123 @@
                 5. Competitive & Analogous Research
               </h3>
               <p>
-                I also reviewed how other EMRs approached EM coding—ranging from simple dropdowns to rigid rules-based engines. None offered the flexibility, transparency, and intelligence we envisioned. This validated our direction to create something smarter, more context-aware, and provider-friendly.
-              </p>
-
+                I also reviewed how other EMRs approached EM coding—ranging from simple dropdowns to rigid rules-based engines. One key missing element across all these solutions was any explanation or education about selecting appropriate EM codes.              </p>
+              </div>
+              </div>
               <h2 class="mb-4">
-                Personas
+                Design Process
               </h2>
-              <p>
-                Based on my user interviews and research I identified two types of providers for our primary user the provider.
-              </p>
-              <figure>
-                <img src="assets/img/portfolio/aiCodingPersona1.png" alt="Provider Persona One: Dr.Sarah - Speed is Everything " class="rounded">
-                <figcaption>Provider Persona One: Dr.Sarah - Speed is Everything</figcaption>
-              </figure>
-              <figure>
-                <img src="assets/img/portfolio/aiCodingPersona2.png" alt="Provider Persona Two: Dr.Julia - Meticulus and Detailed " class="rounded">
-                <figcaption>Provider Persona Two: Dr.Julia - Meticulus and Detailed</figcaption>
-              </figure>
-              </div>
-              <p>
-                EM coding is integral for urgent care clinics so its important to note that there are 2 tertiary users also impacted by this project; the clinic owners and the clinic's billing team.
-              </p>
-              <div class="col-sm-6">
-              <figure class="mb-1">
-                <img src="assets/img/portfolio/aiCodingPersona3.png" alt="Clinic Owner Persona" class="rounded">
-                <figcaption>Clinic Owner Persona: Rachel - Revenue is Everything </figcaption>
-              </figure>
-              </div>
-              <div class="col-sm-6">
-              <figure class="mb-1">
-                <img src="assets/img/portfolio/aiCodingPersona4.png" alt="Billing Team Persona" class="rounded">
-                <figcaption>Billing Team Persona: John - Accuracy is Everything</figcaption>
-              </figure>
-              </div>
+              <h3 class="mb-4">
+                Restatement of the Problems to be Solved
+              </h3>
+              <p>After compiling all my research I compiled a more detailed list of project goals</p>
+              <p><strong>The new EM Coding Design should:</strong></p>
+              <ul>
+                <li>Reduce time and mental effort needed for correctly coding a chart</li>
+                <li>Allow users to edit visit types</li>
+                <li>Clean up visual hierarchy to make it clear which sections need to be filled out</li>
+                <li>Reduce back and forth with billing by making it easier to code correctly</li>
+              </ul>
+              <h3 class="mb-4">Initial Design Concepts</h3>
+              <p>First, I explored multiple potential solutions through sketches.</p>
+              <div class="row mb-5 align-items-center">
+                <div class="col-md-4">
+                  <figure>
+                    <!-- Option One image goes here -->
+                    <img src="assets/img/portfolio/aiCodingOption1.png" alt="Option One Sketch" class="img-fluid">
+                    <figcaption>Option One Sketch</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-8">
+                  <h4>Option One: Reorganize into Tabs and Dropdown</h4>
+                  <p>This iteration focused on cleaning up the Coding section visually and reducing clutter. A simple rules engine would show users the recommended EM code based on their MDM level selections.</p>
+                  <strong>Pros</strong>
+                  <ul>
+                    <li>Conceals the less-used Time coding option</li>
+                    <li>Provides responsive dropdown interactions</li>
+                    <li>Calculates MDM automatically based on dropdown selections</li>
+                  </ul>
+                  <strong>Cons</strong>
+                  <ul>
+                    <li>Additional clicks required for dropdowns</li>
+                    <li>Users must still manually select levels for each MDM component</li>
+                  </ul>
+                </div>
               </div>
 
-              <h2 class="mb-4">
-                Project Team
-              </h2>              
-              <p>
-                <ul>
-                  <li>Product Manager</li>
-                  <li>Lead Product Designer (Me)</li>
-                  <li>Engineering Team</li>
-                </ul>
-              </p>
-              <h2 class="mb-4">
-                Tools
-              </h2>              
-              <p>
-                <ul>
-                  <li>Figma</li>
-                  <li>FigJam</li>
-                  <li>Notion</li>
-                  <li>ChatGPT</li>
-                </ul>
-              </p>
-              <h2 class="mb-4">
-                Research & Discovery
-              </h2>
-              <p>
-                [Research and discovery content to be added]
-              </p>
+              <div class="row mb-5 align-items-center">
+                <div class="col-md-4">
+                  <figure>
+                    <!-- Option Two image goes here -->
+                    <img src="assets/img/portfolio/aiCodingOption2.png" alt="Option Two Sketch" class="img-fluid">
+                    <figcaption>Option Two Sketch</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-8">
+                  <h4>Option Two: Keep Radio Buttons</h4>
+                  <p>This option explored alternative UI elements while maintaining similar functionality.</p>
+                  <strong>Pros</strong>
+                  <ul>
+                    <li>Hides the less common Time coding option</li>
+                    <li>Calculates MDM based on radio button selections</li>
+                    <li>Enables tracking through accept/reject functionality for suggested EM codes</li>
+                  </ul>
+                  <strong>Cons</strong>
+                  <ul>
+                    <li>Interface shows too many options simultaneously</li>
+                    <li>Users still need to select MDM component levels manually</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="row mb-5 align-items-center">
+                <div class="col-md-4">
+                  <figure>
+                    <!-- Option Three image goes here -->
+                    <img src="assets/img/portfolio/aiCodingOption3.png" alt="Option Three Sketch" class="img-fluid">
+                    <figcaption>Option Three Sketch</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-8">
+                  <h4>Option Three: Table View</h4>
+                  <p>Inspired by the MDM guidelines' clear examples, this design recreated their table format to enhance understanding.</p>
+                  <strong>Pros</strong>
+                  <ul>
+                    <li>Provides clear visual representation of appropriate levels</li>
+                  </ul>
+                  <strong>Cons</strong>
+                  <ul>
+                    <li>May be less intuitive for users unfamiliar with the guidelines</li>
+                    <li>Lacks responsiveness</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="row mb-5 align-items-center">
+                <div class="col-md-4">
+                  <figure>
+                    <!-- Option Four image goes here -->
+                    <img src="assets/img/portfolio/aiCodingOption4.png" alt="Option Four Sketch" class="img-fluid">
+                    <figcaption>Option Four Sketch</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-8">
+                  <h4>Option Four: AI Suggestion</h4>
+                  <p>My experience using ChatGPT to understand MDM guidelines sparked an idea: we could generate explanations to help users determine appropriate MDM levels, which would then inform the final code selection.</p>
+                  <strong>Pros</strong>
+                  <ul>
+                    <li>Simple radio button interface</li>
+                    <li>AI-powered education helps providers understand proper coding</li>
+                  </ul>
+                  <strong>Cons</strong>
+                  <ul>
+                    <li>Requires significant development effort for AI integration</li>
+                    <li>Must ensure HIPAA compliance in AI suggestions</li>
+                  </ul>
+                </div>
+              </div>
+
+              
             </article>
           </div>
         </div>
