@@ -92,17 +92,6 @@
                 Evaluation and Management (E/M) coding is a standardized system used in medical documentation and billing to classify the complexity of patient visits. It determines how healthcare providers are reimbursed for services like consultations, office visits, and patient evaluations. These codes are guided by criteria set by the American Medical Association (AMA) and the Centers for Medicare & Medicaid Services (CMS), with a strong emphasis on the provider's medical decision-making (MDM).
               </p>
               <p>
-                The MDM is split into 3 components:
-              </p>
-              <ul>
-                <li>The complexity of diagnoses</li>
-                <li>Data reviewed</li>
-                <li>The risk associated with a patient's condition</li>
-              </ul>
-              <p>
-                Each component gets a rating: min, low, moderate or high. Once you have 2 components you can throw out the highest value and take the next one. This goes for 3 components as well. For example, if Complexity of Diagnosis is a level 4, Risk is a level 3 and Data is a level 2, the MDM would be Level 3.
-              </p>
-              <p>
                 Accurate EM coding is essential not only for clinical documentation but also for ensuring proper reimbursement. For urgent care clinics—where providers see a high volume of varied cases daily—this accuracy directly impacts revenue. Undercoding can lead to lost income, while overcoding can result in audits and legal risks.
               </p>
               <p>
@@ -143,13 +132,31 @@
               <p>
                 I began by diving into official EM coding documentation from the AMA and CMS to fully understand the components that determine code levels—especially Medical Decision-Making (MDM), which determines that final EM Code. I created documentation to explain to engineers how the EM Code is calculated based on problems addressed, data reviewed, and risk of complications. I also found that the rubric was very straightforward and the majority of E/M coding decisions could be predicted based on structured data already captured during charting.
               </p>
-
+              <p>
+                The MDM is split into 3 components:
+              </p>
+              <ul>
+                <li>The complexity of diagnoses</li>
+                <li>Data reviewed</li>
+                <li>The risk associated with a patient's condition</li>
+              </ul>
+              <p>
+                Each component gets a rating: min, low, moderate or high. Once you have 2 components you can throw out the highest value and take the next one. This goes for 3 components as well. For example, if Complexity of Diagnosis is a level 3, Risk is a level 3 and Data is a level 2, the MDM would be Level 3.
+              </p>
+              <figure>
+                <img src="assets/img/portfolio/aiCodingMDMExample.png" alt="Example of a Level 4 Medical Decision Making(MDM)Visualization of the above example" class="rounded">
+                <figcaption>Example of a Level 4 Medical Decision Making(MDM)</figcaption>
+              </figure>
               <h3 class="mb-4">
                 2. Workflow Analysis with Providers
               </h3>
               <p>
                 I spoke to providers using our EMR as well as clinical advisors and reviewed annotated charts to understand current pain points.
               </p>
+              <figure>
+                <img src="assets/img/portfolio/aiCodingUserFlow.png" alt="User flow diagram of the current EM coding experience, highlighting that provider has many tasks to do while they are completing patient charts" class="rounded">
+                <figcaption>User flow diagram of the current EM coding experience</figcaption>
+              </figure>
               <p>
                 Key findings:
               </p>
@@ -160,6 +167,7 @@
                 <li>There was a lack of real-time feedback or suggestions, making accurate coding a time-consuming, error-prone task</li>
                 <li>Providers were open to automation, but only if they retained final control and had visibility into how the code was generated</li>
               </ul>
+
 
               <h3 class="mb-4">
                 3. Interviews with Owners and Admins
@@ -180,14 +188,17 @@
               <p>
                 We had a rudimentary coding in place that didn't take into account how codes were calculated and was confusing for users. Summary of issues with the existing coding section:
               </p>
+              <figure class="mt-1">
+                <img src="assets/img/portfolio/aiCodingCurrentExperience.png" alt="Current EM coding experience with numbers corresponding to the issues below" class="rounded">
+                <figcaption>Current EM coding experience with numbers corresponding to the issues below</figcaption>
+              </figure>
               <ol>
-                <li>Providers and billers must be able to update visit type to correct potential mistakes</li>
-                <li>The visual hierarchy is problematic—since the E/M code depends on Medical Decision Making inputs, placing it at the top is counterintuitive</li>
-                <li>The interface misleadingly suggests that E/M codes can be calculated using both Time and MDM simultaneously, when in reality it must be one or the other</li>
-                <li>The layout suffers from inconsistent spacing</li>
-                <li>The system requires manual E/M code calculation, despite having all the necessary MDM selections to automate this process</li>
+                <li class="mb-1">Providers and billers need to be able to update visit type in case there is a mistake.</li>
+                <li class="mb-1">Visual hierarchy is unclear – E/M code is dependent on what is filled out under Medical Decision Making, so it doesn’t make sense that it's at the top.</li>
+                <li class="mb-1">E/M code is calculated on Time OR MDM, but here it looks like you can do both due to the checkboxes.</li>
+                <li class="mb-1">Spacing is inconsistent and looks messy.</li>
+                <li class="mb-1">Currently, they have to calculate E/M code manually even though we could do it for them based on what they select for MDM.</li>
               </ol>
-
               <h3 class="mb-4">
                 5. Competitive & Analogous Research
               </h3>
@@ -201,63 +212,30 @@
               <p>
                 Based on my user interviews and research I identified two types of providers for our primary user the provider.
               </p>
-              <div class="row mb-4">
-                <div class="col-md-12">
-                  <div class="row align-items-center">
-                    <div class="col-lg-4 mb-3 mb-lg-0">
-                      <img src="assets/img/portfolio/aiCodingPersona1.png" alt="Dr. Sarah - Speed is Everything" class="img-fluid rounded">
-                    </div>
-                    <div class="col-lg-8">
-                      <h4>Dr. Sarah <small class="text-muted">Speed is Everything</small></h4>
-                      <blockquote class="blockquote">“I just want to finish charts quickly and accurately so I can focus on patients.”</blockquote>
-                      <p><strong>Description:</strong> Dr. Patel is a seasoned urgent care physician who sees over 40 patients a day. Her biggest priority is delivering fast, high-quality care without being bogged down by administrative tasks. She often completes documentation between patients and avoids anything that interrupts her flow. She values tools that save time and just work—with little explanation needed.</p>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <strong>Goals</strong>
-                          <ul>
-                            <li>Finish charting faster without sacrificing accuracy</li>
-                            <li>Minimize audit risk through appropriate documentation</li>
-                            <li>Spend less time coding and more time with patients</li>
-                            <li>Maintain high patient throughput in a busy clinic</li>
-                          </ul>
-                        </div>
-                        <div class="col-md-6">
-                          <strong>Motivations</strong>
-                          <ul>
-                            <li>Speed and Efficiency</li>
-                            <li>Trust of AI</li>
-                            <li>Value Patient Relationships</li>
-                          </ul>
-                          <strong>Pains</strong>
-                          <ul>
-                            <li>Isn't confident in the coding guidelines so often codes intuitively</li>
-                            <li>Constant cognitive switching during high-volume days</li>
-                            <li>Time pressure sometimes leads to under coding</li>
-                            <li>Annoying to have to go back to old charts to address the Billing team's comments</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <figure>
+                <img src="assets/img/portfolio/aiCodingPersona1.png" alt="Provider Persona One: Dr.Sarah - Speed is Everything " class="rounded">
+                <figcaption>Provider Persona One: Dr.Sarah - Speed is Everything</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/img/portfolio/aiCodingPersona2.png" alt="Provider Persona Two: Dr.Julia - Meticulus and Detailed " class="rounded">
+                <figcaption>Provider Persona Two: Dr.Julia - Meticulus and Detailed</figcaption>
+              </figure>
               </div>
-
               <p>
                 EM coding is integral for urgent care clinics so its important to note that there are 2 tertiary users also impacted by this project; the clinic owners and the clinic's billing team.
               </p>
-              <div class="row mb-4">
-                <div class="col-md-6">
-                  <figure>
-                    <img src="assets/img/portfolio/aiCodingPersona3.png" alt="Clinic Owner Persona" class="rounded">
-                    <figcaption>Clinic Owner Persona</figcaption>
-                  </figure>
-                </div>
-                <div class="col-md-6">
-                  <figure>
-                    <img src="assets/img/portfolio/aiCodingPersona4.png" alt="Billing Team Persona" class="rounded">
-                    <figcaption>Billing Team Persona</figcaption>
-                  </figure>
-                </div>
+              <div class="col-sm-6">
+              <figure class="mb-1">
+                <img src="assets/img/portfolio/aiCodingPersona3.png" alt="Clinic Owner Persona" class="rounded">
+                <figcaption>Clinic Owner Persona: Rachel - Revenue is Everything </figcaption>
+              </figure>
+              </div>
+              <div class="col-sm-6">
+              <figure class="mb-1">
+                <img src="assets/img/portfolio/aiCodingPersona4.png" alt="Billing Team Persona" class="rounded">
+                <figcaption>Billing Team Persona: John - Accuracy is Everything</figcaption>
+              </figure>
+              </div>
               </div>
 
               <h2 class="mb-4">
