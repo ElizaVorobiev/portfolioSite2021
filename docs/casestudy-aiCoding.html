@@ -221,7 +221,7 @@
               </figure>
               <ol>
                 <li class="mb-1">Providers and billers need to be able to update visit type in case there is a mistake.</li>
-                <li class="mb-1">Visual hierarchy is unclear – E/M code is dependent on what is filled out under Medical Decision Making, so it doesn’t make sense that it's at the top.</li>
+                <li class="mb-1">Visual hierarchy is unclear – E/M code is dependent on what is filled out under Medical Decision Making, so it doesn't make sense that it's at the top.</li>
                 <li class="mb-1">E/M code is calculated on Time OR MDM, but here it looks like you can do both due to the checkboxes.</li>
                 <li class="mb-1">Spacing is inconsistent and looks messy.</li>
                 <li class="mb-1">Currently, they have to calculate E/M code manually even though we could do it for them based on what they select for MDM.</li>
@@ -375,21 +375,28 @@
                 <figcaption>Final Design</figcaption>
               </figure>
               <h2 class="mb-4">Results</h2>
-              <p>
-                We allowed customers to toggle on and off the AI assisted coding, 90% of our customers chose to use the AI Assisted coding solution. However, 10% preferred to code manually because they did not trust the AI results.
-              </p>
-              <p>
-                We also spoke to billers to try to measure if we reduced back and forth with providers. The response differed by the billing team. 30% of billers said that the AI tended to upcode visits while the other 70% thought that it was accurate on average.
-              </p>
-              <p>
-                Overall users really liked the simpleness of the feature but wanted to have see not only the generated medical decision making but also suggestions on how to improve the chart.
-              </p>
+              <p>We gave clinics the ability to toggle AI-assisted coding on or off. <b>90% of providers opted into using the feature</b>, showing strong initial trust and perceived value. However, <b>10% preferred to code manually</b>, citing a lack of confidence in AI recommendations.</p>
+
+              <p>To understand downstream impact, we spoke with billing teams. Feedback was mixed:</p>
+
+              <ul>
+                <li><b></b>70% of billers felt the AI's recommendations were generally accurate</b> and reduced charting back-and-forth.</li>
+                <li><b>30% noted that the AI occasionally upcoded visits</b>, requiring extra review to avoid compliance risk.</li>
+              </ul>
+
+              <p>Despite this, feedback on the UI was overwhelmingly positive. Users appreciated the simplicity of the interface and how it surfaced the recommended Medical Decision Making (MDM) level. One key request: show how to improve a chart, not just the final code—especially for edge cases or borderline levels.</p>
 
               <h2 class="mb-4">Next Steps</h2>
               <ol>
-                <li>Continue to experiment with newer models and different prompts to ensure we get the most accurate results</li>
-                <li>Add a feedback loop in the system so we can measure performance accurately</li>
-                <li>Add more AI suggestions like missing procedures or related diagnosis</li>
+                <li>Experiment with newer models and refined prompts
+                  <p>To improve MDM accuracy and better capture nuance across encounter types.</p>
+                </li>
+                <li>Build a feedback loop into the UI
+                  <p>Let providers and billers flag incorrect or unclear codes—enabling us to track performance and retrain more effectively.</p>
+                </li>
+                <li>Expand AI suggestions
+                  <p>Surface related procedures or diagnosis codes that may have been missed, helping ensure more complete and billable charts.</p>
+                </li>
               </ol>
             </article>
           </div>
